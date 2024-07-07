@@ -10,6 +10,9 @@ from nltk.corpus import stopwords
 import contractions
 from src.exception import CustomException
 
+
+nltk.download('punkt')
+nltk.download('stopwords')
 stop_words = nltk.corpus.stopwords.words('english')
 
 
