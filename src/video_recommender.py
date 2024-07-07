@@ -94,7 +94,7 @@ class VideoRecommender:
 
             similarity_scores = self.similarity_matrix[watched_indices].mean(axis=0)
             self.videos['similarity_score'] = similarity_scores
-
+# Filters out already watched videos and recommends from unwatched videos
             recommended_videos = self.videos[~self.videos['video_id'].isin(watch_history)].sort_values(by='similarity_score', ascending=False)
             recommend_video_indices = recommended_videos['video_id'].head(top_n).tolist()
             recommend_video_titles = recommended_videos['title'].head(top_n).tolist()
